@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>string Manipulation</title>
+    <style>
+      nav ul {
+        list-style-type: none;
+        padding: 0;
+        background-color: #333;
+      }
+
+      nav ul li {
+        display: inline;
+      }
+
+      nav ul li a {
+        color: white;
+        padding: 14px 20px;
+        text-decoration: none;
+        display: inline-block;
+      }
+
+      nav ul li a:hover {
+        background-color: #111;
+      }
+      footer {
+        background-color: #333;
+        text-align: left;
+        padding: 2rem;
+        color: #ffffff;
+        font-size: 1rem;
+        max-width: auto;
+        text-shadow: 1px 1px rgb(0, 0, 0);
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li><a href="dice.html">Dice Roll</a></li>
+        <li><a href="page2.html">Mouse Events</a></li>
+        <li><a href="page3.html">Timer Events</a></li>
+        <li><a href="page4.html">String Manipulation</a></li>
+      </ul>
+    </nav>
+    <input type="text" id="textInput" />
+    <button id="setStringButton">Set String</button>
+    <button id="countWordsButton">Count Words</button>
+    <p id="output"></p>
+
+    <script>
+      const strings = [
+        "This is the first long string with more than ten words.",
+        "Here is another example of a long string for testing.",
+        "The quick brown fox jumps over the lazy dog repeatedly.",
+        "JavaScript is a versatile language with many applications.",
+      ];
+
+      document
+        .getElementById("setStringButton")
+        .addEventListener("click", () => {
+          const randomIndex = Math.floor(Math.random() * strings.length);
+          document.getElementById("textInput").value = strings[randomIndex];
+        });
+
+      document
+        .getElementById("countWordsButton")
+        .addEventListener("click", () => {
+          const text = document.getElementById("textInput").value;
+          const wordCount = text.split(" ").length;
+          const firstZIndex = text.toLowerCase().indexOf("z");
+          document.getElementById(
+            "output"
+          ).textContent = `Word count: ${wordCount}, First 'z' index: ${firstZIndex}`;
+        });
+    </script>
+    <footer>
+      <p>&copy; 2024 Jonathan Reed. RTC CSI_142. All right reserved.</p>
+    </footer>
+  </body>
+</html>

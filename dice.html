@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JonathanReed</title>
+    <style>
+      nav ul {
+        list-style-type: none;
+        padding: 0;
+        background-color: #333;
+      }
+
+      nav ul li {
+        display: inline;
+      }
+
+      nav ul li a {
+        color: white;
+        padding: 14px 20px;
+        text-decoration: none;
+        display: inline-block;
+      }
+
+      nav ul li a:hover {
+        background-color: #111;
+      }
+      footer {
+        background-color: #333;
+        text-align: left;
+        padding: 2rem;
+        color: #ffffff;
+        font-size: 1rem;
+        max-width: auto;
+        text-shadow: 1px 1px rgb(0, 0, 0);
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li><a href="dice.html">Dice Roll</a></li>
+        <li><a href="page2.html">Mouse Events</a></li>
+        <li><a href="page3.html">Timer Events</a></li>
+        <li><a href="page4.html">String Manipulation</a></li>
+      </ul>
+    </nav>
+    <img
+      id="dice1"
+      src="Media/dice1.svg"
+      alt="Dice 1"
+      width="150"
+      height="150"
+    />
+    <img
+      id="dice2"
+      src="Media/dice1.svg"
+      alt="Dice 2"
+      width="150"
+      height="150"
+    />
+    <button id="rollButton">
+      <img src="Media/ThrowDice.jpg" alt="Roll Dice" width="50" height="50" />
+    </button>
+
+    <script>
+      const rollButton = document.getElementById("rollButton");
+      rollButton.addEventListener("click", () => {
+        const rollDice = () => Math.floor(Math.random() * 6) + 1;
+        document.getElementById("dice1").src = `Media/dice${rollDice()}.svg`;
+        document.getElementById("dice2").src = `Media/dice${rollDice()}.svg`;
+      });
+    </script>
+    <footer>
+      <p>&copy; 2024 Jonathan Reed. RTC CSI_142. All right reserved.</p>
+    </footer>
+  </body>
+</html>
